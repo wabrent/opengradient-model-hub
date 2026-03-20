@@ -205,34 +205,34 @@ export default function Home() {
   })
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0a0a0f', color: '#fff', padding: '40px 20px' }}>
+    <div style={{ minHeight: '100vh', background: '#f8fafc', color: '#1e293b', padding: '40px 20px' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
         <h1 style={{ fontSize: '36px', marginBottom: '12px', background: 'linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
           OpenGradient Model Hub
         </h1>
-        <p style={{ color: '#888', fontSize: '16px' }}>
+        <p style={{ color: '#64748b', fontSize: '16px' }}>
           Explore 1500+ verifiable AI models with zkML proofs and TEE attestations
         </p>
       </div>
 
       {/* Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '16px', maxWidth: '800px', margin: '0 auto 32px' }}>
-        <div style={{ background: '#1a1a2e', padding: '20px', borderRadius: '12px', textAlign: 'center' }}>
+        <div style={{ background: '#ffffff', padding: '20px', borderRadius: '12px', textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
           <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#6366f1' }}>1.5K+</div>
-          <div style={{ fontSize: '12px', color: '#888' }}>Total Models</div>
+          <div style={{ fontSize: '12px', color: '#64748b' }}>Total Models</div>
         </div>
-        <div style={{ background: '#1a1a2e', padding: '20px', borderRadius: '12px', textAlign: 'center' }}>
+        <div style={{ background: '#ffffff', padding: '20px', borderRadius: '12px', textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
           <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#8b5cf6' }}>2.1M+</div>
-          <div style={{ fontSize: '12px', color: '#888' }}>Inferences</div>
+          <div style={{ fontSize: '12px', color: '#64748b' }}>Inferences</div>
         </div>
-        <div style={{ background: '#1a1a2e', padding: '20px', borderRadius: '12px', textAlign: 'center' }}>
+        <div style={{ background: '#ffffff', padding: '20px', borderRadius: '12px', textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
           <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#06b6d4' }}>345K+</div>
-          <div style={{ fontSize: '12px', color: '#888' }}>zkML Proofs</div>
+          <div style={{ fontSize: '12px', color: '#64748b' }}>zkML Proofs</div>
         </div>
-        <div style={{ background: '#1a1a2e', padding: '20px', borderRadius: '12px', textAlign: 'center' }}>
+        <div style={{ background: '#ffffff', padding: '20px', borderRadius: '12px', textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
           <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#10b981' }}>567K+</div>
-          <div style={{ fontSize: '12px', color: '#888' }}>TEE Attestations</div>
+          <div style={{ fontSize: '12px', color: '#64748b' }}>TEE Attestations</div>
         </div>
       </div>
 
@@ -248,10 +248,10 @@ export default function Home() {
           padding: '14px 24px',
           width: '100%',
           maxWidth: '500px',
-          background: '#1a1a2e',
-          border: '1px solid #333',
+          background: '#ffffff',
+          border: '2px solid #e2e8f0',
           borderRadius: '12px',
-          color: '#fff',
+          color: '#1e293b',
           fontSize: '16px'
         }}
       />
@@ -264,12 +264,13 @@ export default function Home() {
             onClick={() => setSelectedType(type)}
             style={{
               padding: '8px 16px',
-              background: selectedType === type ? '#6366f1' : '#1a1a2e',
-              border: '1px solid #333',
+              background: selectedType === type ? '#6366f1' : '#ffffff',
+              border: '2px solid #e2e8f0',
               borderRadius: '8px',
-              color: '#fff',
+              color: selectedType === type ? '#fff' : '#64748b',
               fontSize: '14px',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              fontWeight: selectedType === type ? 'bold' : 'normal'
             }}
           >
             {type}
@@ -286,7 +287,7 @@ export default function Home() {
             onChange={(e) => setZkmlOnly(e.target.checked)}
             style={{ width: '18px', height: '18px' }}
           />
-          <span style={{ color: '#818cf8', fontSize: '14px' }}>zkML Only</span>
+          <span style={{ color: '#6366f1', fontSize: '14px', fontWeight: '500' }}>zkML Only</span>
         </label>
         <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
           <input
@@ -295,7 +296,7 @@ export default function Home() {
             onChange={(e) => setTeeOnly(e.target.checked)}
             style={{ width: '18px', height: '18px' }}
           />
-          <span style={{ color: '#34d399', fontSize: '14px' }}>TEE Only</span>
+          <span style={{ color: '#10b981', fontSize: '14px', fontWeight: '500' }}>TEE Only</span>
         </label>
       </div>
 
@@ -312,31 +313,35 @@ export default function Home() {
             key={model.id}
             onClick={() => setSelectedModel(model)}
             style={{
-              background: '#1a1a2e',
-              border: '1px solid #333',
+              background: '#ffffff',
+              border: '2px solid #e2e8f0',
               borderRadius: '16px',
               padding: '24px',
               cursor: 'pointer',
-              transition: 'transform 0.2s, box-shadow 0.2s'
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-4px)'
-              e.currentTarget.style.boxShadow = '0 12px 32px rgba(99, 102, 241, 0.2)'
+              e.currentTarget.style.boxShadow = '0 12px 32px rgba(99, 102, 241, 0.15)'
+              e.currentTarget.style.borderColor = '#6366f1'
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'translateY(0)'
-              e.currentTarget.style.boxShadow = 'none'
+              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)'
+              e.currentTarget.style.borderColor = '#e2e8f0'
             }}
           >
             <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
               {model.zkml && (
                 <span style={{
                   padding: '4px 10px',
-                  background: '#6366f122',
+                  background: '#e0e7ff',
                   border: '1px solid #6366f1',
                   borderRadius: '6px',
                   fontSize: '12px',
-                  color: '#818cf8'
+                  color: '#6366f1',
+                  fontWeight: '600'
                 }}>
                   zkML ✓
                 </span>
@@ -344,35 +349,36 @@ export default function Home() {
               {model.tee && (
                 <span style={{
                   padding: '4px 10px',
-                  background: '#10b98122',
+                  background: '#d1fae5',
                   border: '1px solid #10b981',
                   borderRadius: '6px',
                   fontSize: '12px',
-                  color: '#34d399'
+                  color: '#10b981',
+                  fontWeight: '600'
                 }}>
                   TEE ✓
                 </span>
               )}
             </div>
-            <h3 style={{ fontSize: '18px', marginBottom: '8px', color: '#fff' }}>
+            <h3 style={{ fontSize: '18px', marginBottom: '8px', color: '#1e293b' }}>
               {model.name}
             </h3>
-            <p style={{ color: '#888', fontSize: '14px', marginBottom: '12px', lineHeight: '1.4' }}>
+            <p style={{ color: '#64748b', fontSize: '14px', marginBottom: '12px', lineHeight: '1.5' }}>
               {model.description}
             </p>
-            <div style={{ display: 'flex', gap: '12px', fontSize: '13px', color: '#666' }}>
+            <div style={{ display: 'flex', gap: '12px', fontSize: '13px', color: '#94a3b8' }}>
               <span>{model.type}</span>
               <span>•</span>
               <span>{model.parameters}</span>
               <span>•</span>
-              <span style={{ color: '#34d399' }}>{model.accuracy}</span>
+              <span style={{ color: '#10b981', fontWeight: '600' }}>{model.accuracy}</span>
             </div>
           </div>
         ))}
       </div>
 
       {filtered.length === 0 && (
-        <p style={{ textAlign: 'center', color: '#666', marginTop: '40px', fontSize: '18px' }}>
+        <p style={{ textAlign: 'center', color: '#64748b', marginTop: '40px', fontSize: '18px' }}>
           No models found
         </p>
       )}
@@ -387,7 +393,7 @@ export default function Home() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(0,0,0,0.8)',
+            background: 'rgba(0,0,0,0.5)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -398,24 +404,25 @@ export default function Home() {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: '#1a1a2e',
-              border: '1px solid #333',
+              background: '#ffffff',
+              border: '2px solid #e2e8f0',
               borderRadius: '20px',
               padding: '32px',
               maxWidth: '600px',
               width: '100%',
               maxHeight: '80vh',
-              overflow: 'auto'
+              overflow: 'auto',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.2)'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
-              <h2 style={{ fontSize: '24px', margin: 0 }}>{selectedModel.name}</h2>
+              <h2 style={{ fontSize: '24px', margin: 0, color: '#1e293b' }}>{selectedModel.name}</h2>
               <button
                 onClick={() => setSelectedModel(null)}
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#888',
+                  color: '#64748b',
                   fontSize: '24px',
                   cursor: 'pointer',
                   padding: '0 8px'
@@ -429,11 +436,12 @@ export default function Home() {
               {selectedModel.zkml && (
                 <span style={{
                   padding: '6px 12px',
-                  background: '#6366f122',
+                  background: '#e0e7ff',
                   border: '1px solid #6366f1',
                   borderRadius: '6px',
                   fontSize: '12px',
-                  color: '#818cf8'
+                  color: '#6366f1',
+                  fontWeight: '600'
                 }}>
                   zkML Verified ✓
                 </span>
@@ -441,53 +449,54 @@ export default function Home() {
               {selectedModel.tee && (
                 <span style={{
                   padding: '6px 12px',
-                  background: '#10b98122',
+                  background: '#d1fae5',
                   border: '1px solid #10b981',
                   borderRadius: '6px',
                   fontSize: '12px',
-                  color: '#34d399'
+                  color: '#10b981',
+                  fontWeight: '600'
                 }}>
                   TEE Attested ✓
                 </span>
               )}
             </div>
 
-            <p style={{ color: '#ccc', fontSize: '16px', lineHeight: '1.6', marginBottom: '24px' }}>
+            <p style={{ color: '#475569', fontSize: '16px', lineHeight: '1.6', marginBottom: '24px' }}>
               {selectedModel.description}
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '24px' }}>
-              <div style={{ background: '#0a0a0f', padding: '16px', borderRadius: '12px' }}>
-                <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px' }}>Type</div>
-                <div style={{ fontSize: '16px', color: '#fff' }}>{selectedModel.type}</div>
+              <div style={{ background: '#f1f5f9', padding: '16px', borderRadius: '12px' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px', fontWeight: '500' }}>Type</div>
+                <div style={{ fontSize: '16px', color: '#1e293b', fontWeight: '600' }}>{selectedModel.type}</div>
               </div>
-              <div style={{ background: '#0a0a0f', padding: '16px', borderRadius: '12px' }}>
-                <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px' }}>Category</div>
-                <div style={{ fontSize: '16px', color: '#fff' }}>{selectedModel.category}</div>
+              <div style={{ background: '#f1f5f9', padding: '16px', borderRadius: '12px' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px', fontWeight: '500' }}>Category</div>
+                <div style={{ fontSize: '16px', color: '#1e293b', fontWeight: '600' }}>{selectedModel.category}</div>
               </div>
-              <div style={{ background: '#0a0a0f', padding: '16px', borderRadius: '12px' }}>
-                <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px' }}>Parameters</div>
-                <div style={{ fontSize: '16px', color: '#fff' }}>{selectedModel.parameters}</div>
+              <div style={{ background: '#f1f5f9', padding: '16px', borderRadius: '12px' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px', fontWeight: '500' }}>Parameters</div>
+                <div style={{ fontSize: '16px', color: '#1e293b', fontWeight: '600' }}>{selectedModel.parameters}</div>
               </div>
-              <div style={{ background: '#0a0a0f', padding: '16px', borderRadius: '12px' }}>
-                <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px' }}>Size</div>
-                <div style={{ fontSize: '16px', color: '#fff' }}>{selectedModel.size}</div>
+              <div style={{ background: '#f1f5f9', padding: '16px', borderRadius: '12px' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px', fontWeight: '500' }}>Size</div>
+                <div style={{ fontSize: '16px', color: '#1e293b', fontWeight: '600' }}>{selectedModel.size}</div>
               </div>
-              <div style={{ background: '#0a0a0f', padding: '16px', borderRadius: '12px' }}>
-                <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px' }}>Accuracy</div>
-                <div style={{ fontSize: '16px', color: '#34d399' }}>{selectedModel.accuracy}</div>
+              <div style={{ background: '#f1f5f9', padding: '16px', borderRadius: '12px' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px', fontWeight: '500' }}>Accuracy</div>
+                <div style={{ fontSize: '16px', color: '#10b981', fontWeight: '600' }}>{selectedModel.accuracy}</div>
               </div>
-              <div style={{ background: '#0a0a0f', padding: '16px', borderRadius: '12px' }}>
-                <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px' }}>Inferences</div>
-                <div style={{ fontSize: '16px', color: '#fff' }}>{selectedModel.inferences}</div>
+              <div style={{ background: '#f1f5f9', padding: '16px', borderRadius: '12px' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px', fontWeight: '500' }}>Inferences</div>
+                <div style={{ fontSize: '16px', color: '#1e293b', fontWeight: '600' }}>{selectedModel.inferences}</div>
               </div>
-              <div style={{ background: '#0a0a0f', padding: '16px', borderRadius: '12px' }}>
-                <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px' }}>Creator</div>
-                <div style={{ fontSize: '16px', color: '#fff' }}>{selectedModel.creator}</div>
+              <div style={{ background: '#f1f5f9', padding: '16px', borderRadius: '12px' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px', fontWeight: '500' }}>Creator</div>
+                <div style={{ fontSize: '16px', color: '#1e293b', fontWeight: '600' }}>{selectedModel.creator}</div>
               </div>
-              <div style={{ background: '#0a0a0f', padding: '16px', borderRadius: '12px' }}>
-                <div style={{ fontSize: '12px', color: '#888', marginBottom: '4px' }}>License</div>
-                <div style={{ fontSize: '16px', color: '#fff' }}>{selectedModel.license}</div>
+              <div style={{ background: '#f1f5f9', padding: '16px', borderRadius: '12px' }}>
+                <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '4px', fontWeight: '500' }}>License</div>
+                <div style={{ fontSize: '16px', color: '#1e293b', fontWeight: '600' }}>{selectedModel.license}</div>
               </div>
             </div>
 
@@ -501,7 +510,8 @@ export default function Home() {
                 color: '#fff',
                 fontSize: '16px',
                 fontWeight: 'bold',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                boxShadow: '0 4px 12px rgba(99, 102, 241, 0.3)'
               }}
             >
               Deploy Model
@@ -515,8 +525,8 @@ export default function Home() {
         textAlign: 'center',
         marginTop: '60px',
         paddingTop: '20px',
-        borderTop: '1px solid #333',
-        color: '#666',
+        borderTop: '2px solid #e2e8f0',
+        color: '#64748b',
         fontSize: '14px'
       }}>
         OpenGradient Model Hub - Verifiable AI on Blockchain
