@@ -3,6 +3,24 @@
 import { useState } from 'react'
 import { Model } from '../data/models'
 
+interface InfoCardProps {
+  label: string
+  value: string
+  highlight?: boolean
+  color?: string
+}
+
+function InfoCard({ label, value, highlight, color = 'text-white' }: InfoCardProps) {
+  return (
+    <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+      <div className="text-xs text-gray-500 mb-1 font-medium">{label}</div>
+      <div className={`text-lg font-semibold ${highlight ? color : 'text-white'}`}>
+        {value}
+      </div>
+    </div>
+  )
+}
+
 interface ModelModalProps {
   model: Model | null
   onClose: () => void
@@ -344,24 +362,6 @@ print(f"Result: {result}")`
             </div>
           </div>
         )}
-      </div>
-    </div>
-  )
-}
-
-interface InfoCardProps {
-  label: string
-  value: string
-  highlight?: boolean
-  color?: string
-}
-
-function InfoCard({ label, value, highlight, color = 'text-white' }: InfoCardProps) {
-  return (
-    <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-      <div className="text-xs text-gray-500 mb-1 font-medium">{label}</div>
-      <div className={`text-lg font-semibold ${highlight ? color : 'text-white'}`}>
-        {value}
       </div>
     </div>
   )
