@@ -276,13 +276,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-- **Twitter:** [@yourhandle](https://twitter.com/yourhandle)
+- **Twitter:** [@graanit2](https://x.com/graanit2)
 - **GitHub:** [wabrent](https://github.com/wabrent)
 - **Discord:** your_discord_username
 
 ## 🔗 Links
 
-- **Live Demo:** [Your Vercel Link]
+- **Live Demo:** [open-gradient-model-hub.vercel.app](https://open-gradient-model-hub.vercel.app/)
 - **GitHub Repository:** [github.com/wabrent/OpenGradient-Model-Hub](https://github.com/wabrent/OpenGradient-Model-Hub)
 - **OpenGradient:** [opengradient.ai](https://opengradient.ai)
 - **Documentation:** [docs.opengradient.ai](https://docs.opengradient.ai)
@@ -293,6 +293,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with 💜 for the OpenGradient Community**
 
-[⭐ Star on GitHub](https://github.com/wabrent/OpenGradient-Model-Hub) • [🐦 Follow on Twitter](https://twitter.com/yourhandle) • [🌐 Visit Live Site](https://your-vercel-link.vercel.app)
+[⭐ Star on GitHub](https://github.com/wabrent/OpenGradient-Model-Hub) • [🐦 Follow @graanit2](https://x.com/graanit2) • [🌐 Visit Live Site](https://open-gradient-model-hub.vercel.app/)
 
 </div>
