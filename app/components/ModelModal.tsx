@@ -12,9 +12,9 @@ interface InfoCardProps {
 
 function InfoCard({ label, value, highlight, color = 'text-white' }: InfoCardProps) {
   return (
-    <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+    <div className="group bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/10 rounded-xl p-4 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-0.5">
       <div className="text-xs text-gray-500 mb-1 font-medium">{label}</div>
-      <div className={`text-lg font-semibold ${highlight ? color : 'text-white'}`}>
+      <div className={`text-lg font-semibold ${highlight ? color : 'text-white'} group-hover:text-indigo-400 transition-colors`}>
         {value}
       </div>
     </div>
